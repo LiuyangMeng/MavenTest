@@ -19,10 +19,7 @@ import java.util.Iterator;
 public class urlPostGet {
 	protected static void testPostInStream() {
 		try {
-			//URL url = new URL("http://localhost/pkgrom/upLoadfile.jsp?username=189378&version=3.12&plat=huawei_p7&packageid=200188003000752&filetype=xlsx");
-			//URL url = new URL("http://120.26.114.60/pkgrom/uploadfile.jsp?username=null&version=null");
-			//URL url = new URL("http://115.29.195.97/romhe/shuajihezi/checkMessage.html");
-			//URL url = new URL("http://localhost/romhe/shuajihezi/checkFile.html");
+			//URL url = new URL("http://localhost/upload/upLoadfile.jsp?username=12345&version=3.12&plat=huawei_p7&packageid=3000752&filetype=xlsx");
 			URL url = new URL("http://localhost/MongoDB/curd/showUsers.do");
 			// 发送POST请求必须设置如下两行
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -34,9 +31,9 @@ public class urlPostGet {
 			conn.setRequestProperty("Charsert", "UTF-8");
 			
 			//头信息
-			conn.setRequestProperty("ver","v2.10_beta2");
-			conn.setRequestProperty("pkgid","200188003002640");
-			conn.setRequestProperty("cbno","0210088142A8");
+			conn.setRequestProperty("version","v3");
+			conn.setRequestProperty("pg","200188003002640");
+			conn.setRequestProperty("mac","0210088142A8");
 			conn.setRequestProperty("conf","0");
 			conn.setRequestProperty("root","2014070300");
 			
@@ -48,7 +45,7 @@ public class urlPostGet {
 			//DataOutputStream out = new DataOutputStream(new BufferedOutputStream(conn.getOutputStream()));
 			 
 			//测试，使用本地磁盘文件测试上传到服务器端
-			File file = new File("C:/Users/DLHT/Desktop/IMEI_0210088142A8.zip");
+			File file = new File("C:/Users/DLHT/Desktop/ceshi.zip");
 			FileInputStream in = new FileInputStream(file);
 			int bytes = 0;
 			byte[] buffer = new byte[100];
